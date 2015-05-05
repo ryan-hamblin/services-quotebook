@@ -22,9 +22,18 @@ app.service('dataService', function () {
       this.text = quote;
       this.author = author;
     }
-    if (quoteAdder !== "" && authorAdder !== "") {
-      quotes.push(new QuoteAdder(quoteAdder, authorAdder))
-      }
-  };
+      if (quoteAdder !== "" && authorAdder !== "") {
+        quotes.push(new QuoteAdder(quoteAdder, authorAdder))
+        }
+    };
+
+    this.removeData = function(){
+      var removeText = prompt('What would you like to remove?');
+      for (var i = 0; i < quotes.length; i++) {
+        if(removeText === quotes[i].text) {
+          quotes.splice(i, 1);
+        }
+      };
+    }
 });
   
