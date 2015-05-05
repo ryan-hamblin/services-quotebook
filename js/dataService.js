@@ -14,7 +14,9 @@ app.service('dataService', function () {
   this.getData = function(){
     return quotes;
   };
+  
   //Create a method called addData() that takes in a data object verifies that data has the proper keys(text, author) then adds the obj to the end of the quotes array 
+
    this.addData = function (textAdded, authorAdded) {
     var quoteAdder = prompt("What is your quote?")
     var authorAdder = prompt("What is your name?")    
@@ -28,10 +30,12 @@ app.service('dataService', function () {
     };
 
     this.removeData = function(){
+      console.log('made it to this pont');
       var removeText = prompt('What would you like to remove?');
       for (var i = 0; i < quotes.length; i++) {
         if(removeText === quotes[i].text) {
           quotes.splice(i, 1);
+          i--;
         }
       };
     }

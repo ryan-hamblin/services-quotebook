@@ -72,4 +72,13 @@ Now that your service is set up, let's inject your service in to your controller
 ##Step 5: Persist your Quotes as a cookie in your browser
 * Look up how to use $cookieStore and the $cookieStore API - https://docs.angularjs.org/api/ngCookies/service/$cookieStore
 * Now instead of just pushing or splicing your quotes out of the array, use $cookieStore to persist that data as a cookie in your browser.
-
+    this.removeData = function(){
+      console.log('made it to this pont');
+      var removeText = prompt('What would you like to remove?');
+      for (var i = 0; i < quotes.length; i++) {
+        if(removeText === quotes[i].text) {
+          quotes.splice(i, 1);
+          i--;
+        }
+      };
+    }
