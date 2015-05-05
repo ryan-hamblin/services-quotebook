@@ -15,12 +15,16 @@ app.service('dataService', function () {
     return quotes;
   };
   //Create a method called addData() that takes in a data object verifies that data has the proper keys(text, author) then adds the obj to the end of the quotes array 
-  this.addData = function(obj){
-    for (var i = 0; i < quotes.length; i++) {
-      if(quotes[i]){
-        
+   this.addData = function (textAdded, authorAdded) {
+    var quoteAdder = prompt("What is your quote?")
+    var authorAdder = prompt("What is your name?")    
+    var QuoteAdder = function (quote, author) {
+      this.text = quote;
+      this.author = author;
+    }
+    if (quoteAdder !== "" && authorAdder !== "") {
+      quotes.push(new QuoteAdder(quoteAdder, authorAdder))
       }
-    };
-  }
+  };
 });
   
